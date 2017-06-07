@@ -31,8 +31,10 @@ public class BasicClickHandlersActivity extends Activity {
 	}
 	
 	public void firstButtonClicked(View v) {
-		String s = Lib.getJSON("");
-		SimpleAlertDialog.displayWithOK(this, s);
+		System.out.println("Start");
+		//String s = Lib.readUrl("");
+		System.out.println("End");
+		SimpleAlertDialog.displayWithOK(this, "Live");
 	}
 	
 	private void secondButtonClicked(View v) {
