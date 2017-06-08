@@ -32,13 +32,7 @@ public class BasicClickHandlersActivity extends Activity {
 	}
 	
 	public void firstButtonClicked(View v) {
-		System.out.println("Start");
-		//Lib.getData();
-		//Lib.readUrl("http://thebest.sysgame.de/run.cgi/getMathBlock");
-		Block lib = new Block();
-		lib.execute("");
-		System.out.println("End");
-		SimpleAlertDialog.displayWithOK(this, "Live");
+		SimpleAlertDialog.displayWithOK(this, "firstButton clicked via XML handler in onCreate");
 	}
 	
 	private void secondButtonClicked(View v) {
