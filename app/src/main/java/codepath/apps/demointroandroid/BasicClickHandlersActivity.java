@@ -6,7 +6,8 @@ import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import programm.Lib;
+import programm.*;
+
 
 public class BasicClickHandlersActivity extends Activity {
   
@@ -32,7 +33,10 @@ public class BasicClickHandlersActivity extends Activity {
 	
 	public void firstButtonClicked(View v) {
 		System.out.println("Start");
-		//String s = Lib.readUrl("");
+		//Lib.getData();
+		//Lib.readUrl("http://thebest.sysgame.de/run.cgi/getMathBlock");
+		Block lib = new Block();
+		lib.execute("");
 		System.out.println("End");
 		SimpleAlertDialog.displayWithOK(this, "Live");
 	}
