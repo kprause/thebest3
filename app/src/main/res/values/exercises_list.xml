@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <resources>
     <string-array name="chapters">
-       <item>App Fundamentals</item>
-       <item>User Interface</item>
-       <item>View Controls</item>
-       <item>User Interactions</item>
+       <item>Übungsaufgabens</item>
+       <item>Taschenrechner</item>
+       <item>Hilfe</item>
+       <item>Platzhalter</item>
        <item>User Flows</item>
        <item>Networking</item>
        <item>Advanced Views</item>
