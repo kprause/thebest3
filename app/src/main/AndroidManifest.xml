@@ -18,7 +18,7 @@
         android:label="@string/app_name"
         >
         <activity
-            android:name="codepath.apps.demointroandroid.ActionBarMenuActivity"
+            android:name="ActionBarMenuActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
