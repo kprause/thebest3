@@ -1,10 +1,13 @@
 package codepath.apps.demointroandroid;
 
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import programm.*;
+
 
 public class BasicClickHandlersActivity extends Activity {
   
@@ -29,7 +32,7 @@ public class BasicClickHandlersActivity extends Activity {
 	}
 	
 	public void firstButtonClicked(View v) {
-		SimpleAlertDialog.displayWithOK(this, "firstButton clicked via XML handler");
+		SimpleAlertDialog.displayWithOK(this, "firstButton clicked via XML handler in onCreate");
 	}
 	
 	private void secondButtonClicked(View v) {
