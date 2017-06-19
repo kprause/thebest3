@@ -6,7 +6,8 @@ import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import programm.*;
+
+import programm.Block;
 
 
 public class BasicClickHandlersActivity extends Activity {
@@ -32,6 +33,8 @@ public class BasicClickHandlersActivity extends Activity {
 	}
 	
 	public void firstButtonClicked(View v) {
+		Block block = new Block();
+		block.execute();
 		SimpleAlertDialog.displayWithOK(this, "firstButton clicked via XML handler in onCreate");
 	}
 	

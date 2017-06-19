@@ -30,6 +30,4 @@ public class Question {
             "answerCount: "+answerCount+" :: "+
             "answerMax: "+answerMax+" :: "+
             "answerMin: "+answerMin+" :: ";}
-
-
 }
