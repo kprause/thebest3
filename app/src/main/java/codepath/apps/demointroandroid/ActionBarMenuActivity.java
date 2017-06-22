@@ -8,6 +8,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import programm.Block;
+import programm.Lib;
+import programm.Orchestrator;
+
 public class ActionBarMenuActivity extends Activity {
 
 	@SuppressLint("NewApi")
@@ -30,6 +34,12 @@ public class ActionBarMenuActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 	  switch (item.getItemId()) {
 	  case R.id.menu_toast:
+	  	System.out.println("START");
+		  Orchestrator orch = Orchestrator.getOrchestrator();
+		  orch.execute("login");
+		  Block block = new Block(1);
+		  block.loadBlock();
+		System.out.println("END");
 		Toast.makeText(this, "Toasted", Toast.LENGTH_SHORT).show();
 		break;
 	  case R.id.menu_launch:

@@ -20,6 +20,8 @@ public class Question {
         answerMin = aMin;
     }
 
+
+
     public String getQuestionText(){return questionText;}
     public String getQuestionType(){return questionType;}
     public Integer getAnswerCount(){return answerCount;}

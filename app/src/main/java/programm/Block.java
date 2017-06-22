@@ -11,21 +11,26 @@ import java.util.ArrayList;
  * Ein programm.Block ist eine Liste von X Fragen, die zusammen gehören. (Z.B. nur Mathematik additionsaufgaben)
  */
 
-public class Block extends AsyncTask<String,Integer,String> {
+public class Block {
 
-    ArrayList<Question> questions = null;
+    private ArrayList<Question> questions = null;
 
-    public Block(){
+    private int blockId;
+
+    public Block(int num){
+
         questions = new ArrayList<Question>();
+        blockId = num;
+
     }
 
-    @Override
-    protected String doInBackground(String... strings) {
-
-        return Lib.readUrl("http://thebest.sysgame.de/run.cgi/getMathBlock");
+    public void loadBlock(){
+        Loader loader = new Loader(this);
+        String url = "http://thebest.sysgame.de/run.cgi/getMathBlock";
+        loader.execute("block",url);
     }
 
-    protected void onPostExecute(String result) {
+    public void loadResponse(String result) {
         stringToJSON(result);
         System.out.println("Done-Loading: "+result);
 
@@ -40,13 +45,17 @@ public class Block extends AsyncTask<String,Integer,String> {
                 System.out.println(jsonArray.toString());
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
-                    questions.add(new Question(
-                            jsonObject.getString("questionText"),
-                            jsonObject.getString("questionType"),
-                            jsonObject.getInt("answerCount"),
-                            jsonObject.getDouble("answerMax"),
-                            jsonObject.getDouble("answerMin")
-                    ));
+                    if (jsonObject.has("error")){
+                        Orchestrator.getOrchestrator().logout();
+                    }else if(jsonObject.has("questionText")) {
+                        questions.add(new Question(
+                                jsonObject.getString("questionText"),
+                                jsonObject.getString("questionType"),
+                                jsonObject.getInt("answerCount"),
+                                jsonObject.getDouble("answerMax"),
+                                jsonObject.getDouble("answerMin")
+                        ));
+                    }
                 }
 
             } catch (JSONException e) {
